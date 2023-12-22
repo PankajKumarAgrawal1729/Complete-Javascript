@@ -43,3 +43,27 @@ const myFun = function() {
     console.log("Hello");
 }
 myFun();
+
+
+
+// ******************** Stack and Heap Memory **************
+// all Primitive type store in Stack.
+// all non-Primitive type store in Heap.
+
+let myName = "Pankaj Kumar";
+let anotherName = myName;
+console.log(myName, anotherName); // Pankaj Kumar  Pankaj Kumar
+
+anotherName = "Pankaj...";
+console.log(myName, anotherName); // Pankaj Kumar  Pankaj...
+
+let user1 = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let user2 = user1;
+
+console.log(user1.email, user2.email);  // user@google.com  user@google.com
+user2.email = "user2@google.com";
+console.log(user1.email, user2.email);   // user2@google.com  user2@google.com
