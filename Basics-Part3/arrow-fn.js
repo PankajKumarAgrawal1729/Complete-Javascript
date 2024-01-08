@@ -11,11 +11,11 @@ const user = {
 // user.welcomeMessage();
 // user.username = "Ram";
 // user.welcomeMessage();
- 
+
 console.log(this);  // {} in node it refer to empty object, and in browser it refer to window
 
 
-function fun(){
+function fun() {
     let name = "Pankaj";
     console.log(this.name);  // undefined
 }
@@ -23,7 +23,7 @@ function fun(){
 fun();
 
 
-const fun1 = function(){
+const fun1 = function () {
     let name = "Pankaj";
     console.log(this.name);  // undefined
 }
