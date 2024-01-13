@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="langauge">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLangauge(langName){
+        const lang = document.createElement('li');
+        lang.innerHTML = langName;
+        document.querySelector(".langauge").appendChild(lang);
+    }
+    addLangauge("Java");
+    addLangauge("TypeScript");
+
+    function addOptimiseLangauge(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".langauge").appendChild(li);
+    }
+    addOptimiseLangauge("Python");
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(4)");
+    const newLi = document.createElement('li');
+    newLi.appendChild(document.createTextNode("jQuery"));
+    secondLang.replaceWith(newLi);
+
+    // Edit
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>TypeScript</li>';
+
+    //remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+</script>
+</html>
