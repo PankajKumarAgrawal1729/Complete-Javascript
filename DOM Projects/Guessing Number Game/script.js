@@ -31,7 +31,7 @@ number.addEventListener("input", () => {
 
 submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    let value = number.value;
+    let value = parseInt(number.value);
     chances -= 1;
     prevGuessList.push(value);
     prevguess.innerHTML = prevGuessList;
@@ -41,6 +41,12 @@ submitBtn.addEventListener("click", (event) => {
     }
     else if (chances <= 0) {
         result.innerHTML = `You Lose!<br/>Better Luck Next Time.`;
+    } else {
+        if (actualNumber < value) {
+            result.innerHTML = "Your guess is too high.";
+        } else {
+            result.innerHTML = "Your guess is too low.";
+        }
     }
     if (actualNumber == value || chances <= 0) {
         submitBtn.style.display = "none";
