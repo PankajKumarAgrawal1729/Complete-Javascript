@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(circle farthest-corner at 22.4% 21.7%, rgba(4, 189, 228, 1) 0%, rgba(2, 83, 185, 1) 100.2%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.game-container {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.game-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+input {
+    height: 1.8rem;
+    width: 10rem;
+}
+
+button {
+    height: 30px;
+    width: 130px;
+    background-color: white;
+    font-size: medium;
+    border-radius: 10px;
+    transition: all 0.5s linear;
+}
+
+button:hover {
+    height: 50px;
+    width: 180px;
+    background-color: red;
+    color: white;
+}
+
+.game-container.result {
+    display: none;
+}
+
+.currentSituation,
+.result-conatiner {
+    font-size: 20px;
+}
+
+.warning {
+    display: none;
+    color: red;
+    font-size: 15px;
+}
+
+#restartBtn {
+    display: none;
+}
+
+#actualNumber {
+    display: none;
+}
