@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: chartreuse;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        img{
+            width: 395px;
+            height: 300px;
+            border-radius: 5px;
+            padding-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img alt="User Photo" id="user-img">
+            <h4>Followers: <span id="count"></span></h4>
+        </div>
+    </div>
+</body>
+<script>
+    const requestURL = "https://api.github.com/users/pankajkumaragrawal1729";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestURL);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            const userImg = document.getElementById("user-img");
+            const count = document.getElementById("count");
+            userImg.setAttribute("src", data.avatar_url);
+            count.innerHTML = data.followers;
+        }
+    }
+    xhr.send();
+</script>
+</html>
