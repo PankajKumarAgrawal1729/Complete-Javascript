@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+
+    // lexical scoping
+    function outer() {
+        let username = "Pankaj";
+        // console.log("outer secret", secret);  // not accessible
+        function inner() {
+            let secret = "my123";
+            console.log("inner", username);  // Pankaj
+        }
+        function inner2() {
+            console.log("inner2", username);  // Pankaj
+            // console.log("innser2 secret", secret);  // not accessible
+        }
+        inner();
+        inner2();
+    }
+    outer();
+    // console.log("too outer", username);  // not accessible
+</script>
+
+<script>
+    // Closure
+    function clickHandler(color) {
+        // here it will return whole lexical scope
+        return function () {
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+</script>
+
+</html>
