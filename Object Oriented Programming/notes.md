@@ -1,5 +1,7 @@
 # Javascript and Classes
 
+## Everything in JS is Object
+
 ## OOPs : It is programming paradigm
 - collection of properties and methods
 - toLowerCase, promise
